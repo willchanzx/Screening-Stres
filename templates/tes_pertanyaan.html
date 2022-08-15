@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body%}
+<center>
+    <form action="#" method="POST">
+    <p class="text-white">
+        {{ pertanyaan }}</p>
+
+    <input type="submit" value="ya" name="answ" class="px-6 py-2 text-2xl place-items-center font-bold bg-gradient-to-r from-red-500 via-orange-500 to-green-500 hover:from-pink-500 hover:via-sky-500 hover:to-blue-500 hover:text-white rounded-full border-2 border-sky-300">
+    <input type="submit" value="tidak" name="answ" class="px-6 py-2 text-2xl place-items-center font-bold bg-gradient-to-r from-red-500 via-orange-500 to-green-500 hover:from-pink-500 hover:via-sky-500 hover:to-blue-500 hover:text-white rounded-full border-2 border-sky-300">
+
+    </form>
+</center>
+{% endblock %}

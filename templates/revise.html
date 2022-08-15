@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body%}
+
+
+
+<div class="flex items-center justify-center min-h-screen">
+    <div class="px-8 py-6 mt-4 text-left bg-gradient-to-r from-orange-300 to-red-300 shadow-lg">
+        <p>Selamat datang, {{user}}!</p>
+        {% if jumlah_kasus == 0 %}
+        <p class="py-2">Belum ada hasil screening baru!</p>
+        {% else %}
+        <p class="py-2">Terdapat {{jumlah_kasus}} hasil screening baru yang belum dicek!</p>
+        {% endif %}
+
+        <table class="table-fixed">
+
+            <tr>
+                {% for header in heading %}
+                <th class="text-center border-2 border-solid border-gray-400 bg-green-300">{{ header }}</th>
+                {% endfor %}
+            </tr>
+
+
+                {% for row in caserow %}
+                    <tr>
+                    {% for cell in row %}
+                        <td class="text-center border-2 border-solid border-gray-400 px-2">
+                            {{ cell }}
+                        </td>
+                    {% endfor %}
+                        <td class="border-2 px-2">
+                            <form href="#">
+                            <input type="button" value="accept" class="transition delay-75 duration-150 ease-in-out hover:scale-125  px-2 py-1 text-1xl font-bold bg-gradient-to-r from-red-500 via-orange-500 to-green-500 hover:from-pink-500 hover:via-sky-500 hover:to-blue-500 hover:text-white rounded-md border-2 border-yellow-300">
+                            <input type="button" value="decline" class="transition delay-75 duration-150 ease-in-out hover:scale-125 px-2 py-1 text-1xl font-bold bg-gradient-to-r from-red-500 via-orange-500 to-green-500 hover:from-pink-500 hover:via-sky-500 hover:to-blue-500 hover:text-white rounded-md border-2 border-yellow-300">
+                            <input type="button" value="check" class="transition delay-75 duration-150 ease-in-out hover:scale-125 px-2 py-1 text-1xl font-bold bg-gradient-to-r from-red-500 via-orange-500 to-green-500 hover:from-pink-500 hover:via-sky-500 hover:to-blue-500 hover:text-white rounded-md border-2 border-yellow-300">
+
+
+
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+        </table>
+    </div>
+</div>
+{% endblock %}

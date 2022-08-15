@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/output.css')}}"/>
+    <meta charset="UTF-8"/>
+    <title>Stress Meter</title>
+    <style>
+ul {
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+</style>
+<nav >
+    <ul class="fill-current bg-gray-200" >
+  <li><a class="p-3 transition ease-in-out hover:bg-blue-500 hover:text-white hover:font-bold" href="{{url_for('root')}}">Home</a></li>
+        {% block head %}{% endblock %}
+        {% if "user" in session %}
+  <li><a class="p-3 transition ease-in-out hover:bg-blue-500 hover:text-white hover:font-bold" href="{{url_for('logout')}}">Logout</a></li>
+        {% endif %}
+</ul>
+</nav>
+</head>
+<body class="bg-blue-600">
+{% block body %}
+
+{% endblock %}
+</body>
+</html>

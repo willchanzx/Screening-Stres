@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body%}
+<div class="flex items-center justify-center min-h-screen" >
+    <div class="px-8 py-6 text-left bg-gray-100 shadow-lg">
+<center>
+
+    <p class="font-bold text-2xl">
+    {{pertanyaan_induk}}
+    </p><br><br>
+
+    <form action="#" class="flex space-x-4 justify-center" method="POST">
+    <input type="submit" name="answer_button" value="Ya" class="transition ease-in-out hover:scale-95 px-6 py-2 text-2xl place-items-center font-bold bg-blue-300 hover:bg-blue-500 rounded-full border-2 border-gray-400">
+    <input type="submit" name="answer_button" value="Tidak" class="transition ease-in-out hover:scale-95 px-6 py-2 text-2xl place-items-center font-bold bg-blue-300 hover:bg-blue-500 rounded-full border-2 border-gray-400">
+    </form>
+
+</center>
+    </div>
+</div>
+{% endblock %}

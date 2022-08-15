@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body%}
+
+    <div class="flex items-center justify-center min-h-screen" >
+        <div class="px-8 py-6 mt-4 text-left bg-gray-100 shadow-lg">
+<center>
+<h1 class="text-3xl py-6 font-bold"> Hasil Screening anda adalah : </h1>
+</center>
+            <center>
+    <table class="table-auto">
+<tr>
+    <th class="text-center border-2 border-solid border-gray-400 bg-gray-300">
+        Gejala
+    </th>
+    <th class="text-center border-2 border-solid border-gray-400 bg-gray-300">
+        Ada/Tidak
+    </th>
+</tr>   {% for i in gej_pil %}
+        <tr>
+            <td class="text-center border-2 border-solid border-gray-400 bg-white">
+                {{ i[0] }}
+            </td>
+            <td class="text-center border-2 border-solid border-gray-400 bg-white">
+                {{ i[1] }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+                </center>
+
+            <center>
+        <p class="mt-2">Tingkat stress anda menurut hasil screening adalah:</p>
+                <p class="font-bold text-2xl mb-2 mt-1">{{hasil_screen}}</p>
+            </center>
+
+            <center>
+                <a href="{{url_for('root')}}">
+            <button class="transition ease-in-out hover:scale-95 px-6 py-2 text-2xl place-items-center font-bold bg-blue-400 hover:bg-blue-500 hover:text-white rounded-full border-2 border-gray-400">
+                Kembali ke halaman utama
+            </button>
+                </a>
+            </center>
+
+        </div>
+    </div>
+
+
+{% endblock %}
